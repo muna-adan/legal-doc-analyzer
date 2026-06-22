@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Legal Doc Analyzer{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h1>Legal Document Analyzer</h1>
+        <p>Upload a PDF or DOCX file and get an instant AI-powered analysis — key parties, dates, monetary amounts, risk flags, and a plain English summary.</p>
+
+        <form action="/analyze" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".pdf,.docx" required style="margin: 1rem 0; display: block;">
+            <button type="submit" class="btn">Analyze Document</button>
+            <div id="spinner" style="display:none; margin-top: 1rem; padding: 1rem; background: white; border-radius: 8px; border-left: 3px solid #c9a84c;">
+    <p style="color: #1c2b4a; font-family: Georgia, serif;">✦ Analyzing your document...</p>
+    <p style="color: #6b7280; font-size: 0.85rem; margin-top: 0.3rem;">Reading content, extracting key information, and running AI analysis. This may take a few seconds.</p>
+</div>
+</div>
+        </form>
+    </div>
+    <script>
+    document.querySelector('form').addEventListener('submit', function() {
+        document.getElementById('spinner').style.display = 'block';
+        document.querySelector('button').style.display = 'none';
+    });
+</script>
+{% endblock %}
+
+
+

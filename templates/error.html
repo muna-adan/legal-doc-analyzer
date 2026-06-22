@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Error{% endblock %}
+
+{% block content %}
+    <div class="card" style="border-left: 4px solid #c0392b;">
+        <h1 style="color: #c0392b;">Something went wrong</h1>
+        <p style="margin-top: 1rem;">{{ message }}</p>
+        <a href="/" class="btn" style="margin-top: 1rem;">Try Again</a>
+    </div>
+{% endblock %}
+
